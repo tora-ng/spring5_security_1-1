@@ -42,5 +42,11 @@ public class SecurityController {
 		log.info("/admin check");
 //		return "/security/admin";  자료형을 void로 바꾸면 /security/admin 값이 자동으로 리턴됨.
 	}
-	
+
+	@GetMapping("/accessError")
+	public void accessError(Model model) {
+		log.info("accessError");
+		
+		model.addAttribute("msg", "ACCESS Denied(403 에러)");
+	}
 }
